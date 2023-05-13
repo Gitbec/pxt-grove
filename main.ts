@@ -767,14 +767,14 @@ namespace grove {
             if (result == 3) continue
 
             let data = "GET /update?api_key=" + apiKey
-            if (!isNaN(field1)) data = data + "&field1=" + field1
-            if (!isNaN(field2)) data = data + "&field2=" + field2
-            if (!isNaN(field3)) data = data + "&field3=" + field3
-            if (!isNaN(field4)) data = data + "&field4=" + field4
-            if (!isNaN(field5)) data = data + "&field5=" + field5
-            if (!isNaN(field6)) data = data + "&field6=" + field6
-            if (!isNaN(field7)) data = data + "&field7=" + field7
-            if (!isNaN(field8)) data = data + "&field8=" + field8
+            if (field1 != -999 && !isNaN(field1)) data = data + "&field1=" + field1
+            if (field2 != -999 && !isNaN(field2)) data = data + "&field2=" + field2
+            if (field3 != -999 && !isNaN(field3)) data = data + "&field3=" + field3
+            if (field4 != -999 && !isNaN(field4)) data = data + "&field4=" + field4
+            if (field5 != -999 && !isNaN(field5)) data = data + "&field5=" + field5
+            if (field6 != -999 && !isNaN(field6)) data = data + "&field6=" + field6
+            if (field7 != -999 && !isNaN(field7)) data = data + "&field7=" + field7
+            if (field8 != -999 && !isNaN(field8)) data = data + "&field8=" + field8
 
             sendAtCmd("AT+CIPSEND=" + (data.length + 2))
             result = waitAtResponse(">", "OK", "ERROR", 2000)
